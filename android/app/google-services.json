@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "447909172169",
+    "firebase_url": "https://hotel-d6c04.firebaseio.com",
+    "project_id": "hotel-d6c04",
+    "storage_bucket": "hotel-d6c04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447909172169:android:b427a151f2eb454ae40e18",
+        "android_client_info": {
+          "package_name": "fr.tergel.hotel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447909172169-8260mhss351o88defi8bmpnn536fcq3a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIwYMIvPXBOon6RYj-UOGRSptb-RQys8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447909172169-8260mhss351o88defi8bmpnn536fcq3a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

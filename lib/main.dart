@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hotel/connexion/connexion.dart';
+import 'package:hotel/authentification/authentification.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
           textTheme:
               GoogleFonts.openSansTextTheme(Theme.of(context).textTheme)),
-      home: Connexion(),
+      home: Authentification(),
     );
   }
 }

@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class Connexion extends StatefulWidget {
   Connexion({Key key}) : super(key: key);
@@ -10,7 +13,27 @@ class Connexion extends StatefulWidget {
 
 class _ConnexionState extends State<Connexion> {
   bool cacherMdp = true;
-  final _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passController = TextEditingController();
+
+  void _signInWithEmailAndPassword() async {
+    final User user = (await _auth.signInWithEmailAndPassword(
+      email: _emailController.text,
+      password: _passController.text,
+    ))
+        .user;
+
+    if (user != null) {
+      setState(() {
+        print("Login success");
+      });
+    } else {
+      setState(() {
+        print("Raté morray");
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +69,7 @@ class _ConnexionState extends State<Connexion> {
                         }
                         return null;
                       },
+                      controller: _emailController,
                     ),
                     TextFormField(
                       obscureText: cacherMdp,
@@ -68,12 +92,13 @@ class _ConnexionState extends State<Connexion> {
                         }
                         return null;
                       },
+                      controller: _passController,
                     ),
                     FlatButton(
                       color: Colors.red,
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
-                          print("Ok bg");
+                          _signInWithEmailAndPassword();
                         }
                       },
                       child: Center(
